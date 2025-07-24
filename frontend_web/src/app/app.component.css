@@ -1,0 +1,196 @@
+:root {
+  --primary: #1976d2;
+  --secondary: #424242;
+  --accent: #ff9800;
+  --bg: #f8fafc;
+  --card-bg: #fff;
+  --sidebar-bg: #fff;
+  --sidebar-accent: #ececec;
+  --accent-green: #34c759;
+  --text: #1a1a1a;
+  --text-muted: #757575;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  font-family: "Inter", BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 230px;
+  background: var(--sidebar-bg);
+  border-right: 1px solid #f0f0f1;
+  padding: 0;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 0;
+  box-shadow: 2px 0 6px 2px rgba(32,40,45,0.03);
+}
+
+.sidebar-logo {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 1rem 1rem 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.logo-icon {
+  font-size: 2.1rem;
+  margin-right: 0.5rem;
+}
+
+.sidebar-links {
+  list-style: none;
+  margin: 0;
+  padding: 0 0.5rem;
+  flex: 1 1 auto;
+}
+.sidebar-links li {
+  margin: 0.6rem 0;
+}
+.sidebar-links a {
+  display: block;
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.17s;
+}
+
+.sidebar-links a.active,
+.sidebar-links a:hover {
+  background: var(--sidebar-accent);
+  color: var(--primary);
+}
+
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.5rem;
+  padding: 1.5rem 1rem;
+}
+
+.btn-link {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.3rem 0.7rem;
+  border-radius: 5px;
+  background: transparent;
+  transition: background 0.17s;
+}
+.btn-link:hover {
+  background: var(--sidebar-accent);
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.top-bar {
+  height: 56px;
+  background: none;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: .5px;
+  color: var(--primary);
+  background: var(--card-bg);
+  z-index: 1;
+  min-height: 56px;
+  justify-content: space-between;
+}
+
+.content-main {
+  flex: 1;
+  width: 100%;
+  padding: 2.2rem 2.8rem;
+  background: var(--bg);
+  overflow-x: auto;
+}
+
+.section-title {
+  font-size: 1rem;
+}
+
+@media (max-width: 800px) {
+  .sidebar {
+    width: 66px;
+    min-width: 66px;
+    align-items: center;
+  }
+  .sidebar-logo .logo-text {
+    display: none;
+  }
+  .sidebar-links a {
+    text-align: center;
+    padding: 0.7rem 0;
+  }
+  .main-content {
+    padding-left: 0 !important;
+  }
+  .content-main {
+    padding: 1rem 0.2rem;
+  }
+  .sidebar-bottom {
+    padding: 1rem 0.4rem;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-shell {
+    flex-direction: column;
+  }
+  .sidebar {
+    flex-direction: row;
+    width: 100%;
+    min-width: 0;
+    height: 56px;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+  }
+  .sidebar-logo .logo-text {
+    display: inline;
+    font-size: 1.1rem;
+  }
+  .sidebar-links {
+    flex-direction: row;
+    display: flex;
+  }
+  .sidebar-links li {
+    margin: 0 0.2rem;
+  }
+  .main-content {
+    min-height: 0;
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ececec;
+  border-radius: 18px;
+}
